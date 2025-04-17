@@ -1,0 +1,107 @@
+---
+layout: default
+title: Home
+---
+
+<div class="w-full mx-auto flex flex-col gap-8">
+  {% for article in site.articles %}
+    <div class="article-card">
+      {% if article.featured_image %}
+      <div class="image-container">
+        <img src="{{ article.featured_image }}" alt="{{ article.title }}" class="transition duration-500">
+      </div>
+      {% else %}
+      <div class="image-container bg-gradient-to-r from-blue-500 to-purple-600">
+        <div class="w-full h-full flex items-center justify-center text-white">
+          <span class="text-3xl font-bold">{{ article.title | truncate: 1, "" }}</span>
+        </div>
+      </div>
+      {% endif %}
+      
+      <div class="content-wrapper">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-100 tracking-tight">
+          <a href="{{ article.url }}" class="hover:text-blue-400 transition">{{ article.title }}</a>
+        </h2>
+        <p class="text-gray-400 text-sm mb-4 flex items-center gap-2">
+          {{ article.date | date: "%b %d, %Y" }}
+          {% if article.tags %}
+            &mdash;
+            {% for tag in article.tags %}
+              <span class="inline-block bg-blue-900/30 text-blue-300 rounded-full px-3 py-0.5 text-xs font-semibold">#{{ tag }}</span>
+            {% endfor %}
+          {% endif %}
+        </p>
+        <hr class="my-4 border-gray-700" />
+        <p class="mb-4 text-gray-300 text-lg leading-relaxed">{{ article.excerpt | strip_html | truncate: 160 }}</p>
+        <a href="{{ article.url }}" class="read-more bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded px-4 py-2 transition inline-block">Read full article</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  // Improved article animation that prevents layout shifts
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.article-card');
+    
+    // Add animation classes in a way that prevents layout shifts
+    cards.forEach((card, index) => {
+      // Start with opacity 1 (visible) and transform applied
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+      
+      // Add subtle reveal animation without shifting layout
+      card.style.animation = `fadeSlideIn 0.5s ease ${index * 0.1}s`;
+    });
+    
+    // Add language labels to code blocks
+    document.querySelectorAll('pre').forEach(pre => {
+      const codeElement = pre.querySelector('code');
+      if (codeElement) {
+        const classes = codeElement.className.split(' ');
+        const langClass = classes.find(cl => cl.startsWith('language-'));
+        
+        if (langClass) {
+          const lang = langClass.replace('language-', '');
+          pre.setAttribute('data-lang', lang);
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Animation styles for article cards */
+  @keyframes fadeSlideIn {
+    from { 
+      opacity: 0.7; 
+      transform: translateY(10px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Improve code block display */
+  code.language-md, code.language-todo {
+    line-height: 1.5;
+    font-size: 0.9em;
+  }
+  
+  /* Fixed button styling */
+  a.read-more {
+    display: inline-block;
+    background-color: #3b82f6 !important;
+    color: white !important;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s;
+  }
+  
+  a.read-more:hover {
+    background-color: #2563eb !important;
+    transform: translateY(-1px);
+  }
+</style> 

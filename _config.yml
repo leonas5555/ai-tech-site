@@ -1,0 +1,47 @@
+title: AI Agents Technical Blog
+baseurl: "/ai-tech-site"
+url: "http://leonas5555.github.io"
+collections:
+  articles:
+    output: true
+    permalink: /articles/:slug/
+  code_samples:
+    output: true
+    permalink: /code_samples/:path/
+defaults:
+  - scope:
+      path: "_articles"
+    values:
+      layout: "post"
+  - scope:
+      path: "code_samples"
+    values:
+      layout: "code"
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude only directories that shouldn't be processed
+exclude:
+  - drafts
+  - scripts
+  - .venv
+  - .env
+  - .env.example
+  - README.md
+  - inventory.yaml
+  - inventory_publish.yaml
+  - inventory_draft.yaml
+  - linkedin
+  - previews
+  - .cursor
+  - .github
+  - vendor
+  - .bundle
+  - .jekyll-cache
+
+sass_dir: _sass
+
+kramdown:
+  parse_block_html: true
+  input: GFM 

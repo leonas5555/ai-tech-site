@@ -1,0 +1,721 @@
+/* Default to dark mode */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  /* Dark mode by default */
+  background-color: #0f172a;
+  color: #e5e7eb;
+}
+
+/* Light mode only when explicitly set */
+html:not(.dark) {
+  background-color: #f5f6fa;
+  color: #222;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'Liberation Sans', 'sans-serif';
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Remove the overly aggressive color overrides */
+p, li, span, div {
+  color: inherit;
+}
+
+header, footer {
+  background: #fff;
+  padding: 1.5em 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+main {
+  flex: 1 0 auto;
+  max-width: 1100px;
+  width: 92%;
+  margin: 2.5em auto;
+  padding: 0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  color: #e5e7eb;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+
+nav {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+nav a {
+  margin-right: 1.5em;
+  text-decoration: none;
+  color: #3b49df;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+nav a:hover {
+  text-decoration: underline;
+  color: #1d2d44;
+}
+
+/* Sidebar (optional, for future use) */
+.sidebar {
+  background: #f5f6fa;
+  border-radius: 10px;
+  padding: 1.5em;
+  margin-bottom: 2em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+/* Code blocks with better dark mode contrast */
+pre, code {
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'monospace';
+  background: #f6f8fa;
+  color: #22223b;
+  border-radius: 8px;
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1.5em 0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+code {
+  padding: 0.2em 0.4em;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* Improved dark mode code blocks */
+html.dark pre, 
+html.dark code {
+  background: #0f172a; /* Darker background for code in dark mode */
+  color: #e5e7eb;
+  border: 1px solid #374151;
+}
+
+html.dark pre {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Code block with syntax highlighting in dark mode */
+html.dark .highlight pre {
+  background: #0f172a; /* Darker background */
+  border: 1px solid #374151;
+}
+
+/* Language labels for code blocks */
+html.dark .highlight pre::before {
+  background: #1e293b;
+  color: #94a3b8;
+}
+
+/* Fix for inline code with monospace font */
+code.language-plaintext {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.4;
+  vertical-align: middle;
+  padding: 0.2em 0.4em;
+  margin: 0 0.1em;
+}
+
+/* Buttons */
+.button, button, input[type="submit"], .read-more {
+  background-color: #3b82f6 !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button:hover, button:hover, input[type="submit"]:hover, .read-more:hover {
+  background-color: #2563eb !important;
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+
+/* Article meta */
+article > p > small {
+  color: #6c757d;
+  font-size: 0.95em;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1em 0;
+}
+
+/* Footer */
+footer {
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 0.95em;
+  color: #94a3b8;
+  margin-top: 4em;
+  padding: 1.5em 0;
+  background: #0f172a;
+  border-top: 1px solid #1e293b;
+}
+
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+.article-card {
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 0 0 1.5rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card .content-wrapper {
+  padding: 1.5rem 2rem;
+}
+
+.article-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Image container for cards */
+.article-card .image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.article-card .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  transition: transform 0.5s ease;
+}
+
+.article-card:hover .image-container img {
+  transform: scale(1.05);
+}
+
+/* Improve content spacing */
+.article-card h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.article-card .meta {
+  color: #6c757d;
+  font-size: 0.95em;
+  margin-bottom: 1em;
+}
+.article-card .tag {
+  background: #f5f6fa;
+  color: #3b49df;
+  border-radius: 4px;
+  padding: 0.2em 0.6em;
+  margin-right: 0.5em;
+  font-size: 0.95em;
+}
+.article-card .read-more {
+  display: inline-block;
+  width: auto;
+  min-width: 120px;
+}
+.article-card .full-content {
+  margin-top: 1.5em;
+  border-top: 1px solid #e0e1e6;
+  padding-top: 1.5em;
+  animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.expand-btn {
+  background: #3b49df;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1em;
+  transition: background 0.2s;
+}
+.expand-btn:hover {
+  background: #22223b;
+}
+
+.language-mermaid {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 1.5em 0;
+  overflow-x: auto;
+}
+
+.mermaid {
+  display: block;
+  min-width: 300px;
+  min-height: 100px;
+  margin: 2em 0;
+  background: none;
+  overflow-x: auto;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Force light/dark mode helpers */
+.force-light, .force-dark {
+  transition: none !important;
+}
+
+/* Theme specific styles */
+/* Light theme */
+html:not(.dark) body {
+  background-color: #f5f6fa;
+  color: #222;
+}
+
+html:not(.dark) main {
+  background-color: white;
+}
+
+html:not(.dark) .article-card {
+  background-color: white;
+  color: #1f2937;
+}
+
+html:not(.dark) h1, 
+html:not(.dark) h2, 
+html:not(.dark) h3,
+html:not(.dark) h4 {
+  color: #111827;
+}
+
+html:not(.dark) .text-gray-900 {
+  color: #111827;
+}
+
+html:not(.dark) .text-gray-700 {
+  color: #374151;
+}
+
+html:not(.dark) .text-gray-500 {
+  color: #6b7280;
+}
+
+html:not(.dark) .text-gray-400 {
+  color: #9ca3af;
+}
+
+/* Dark theme */
+html.dark body {
+  background-color: #0f172a;
+  color: #e5e7eb;
+}
+
+html.dark main {
+  background-color: #1e293b;
+}
+
+html.dark .article-card {
+  background-color: #1e293b;
+  color: #e5e7eb;
+  border-color: #334155;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4 {
+  color: #f9fafb;
+}
+
+html.dark .text-gray-100 {
+  color: #f3f4f6;
+}
+
+html.dark .text-gray-200 {
+  color: #e5e7eb;
+}
+
+html.dark .text-gray-300 {
+  color: #d1d5db;
+}
+
+html.dark .text-gray-400 {
+  color: #9ca3af;
+}
+
+/* Transition for theme changes */
+body, main, header, footer, article, .article-card, button, a {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom styles for headings with high specificity */
+main article h1,
+main .prose h1,
+main .full-content h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+  border-left: 5px solid #3b82f6;
+  background-color: rgba(243, 244, 246, 0.2);
+  border-radius: 0.25rem;
+  line-height: 1.2;
+  color: #111827;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  display: block;
+}
+
+.dark main article h1,
+.dark main .prose h1,
+.dark main .full-content h1 {
+  border-left-color: #60a5fa;
+  background-color: rgba(30, 41, 59, 0.5);
+  color: #f9fafb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* H2 styles */
+main article h2,
+main .prose h2,
+main .full-content h2 {
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.dark main article h2,
+.dark main .prose h2,
+.dark main .full-content h2 {
+  border-bottom-color: rgba(55, 65, 81, 0.5);
+  color: #e5e7eb;
+}
+
+/* H3 styles */
+main article h3,
+main .prose h3,
+main .full-content h3 {
+  font-size: 1.5rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  padding-left: 0.75rem;
+  border-left: 3px solid #9ca3af;
+}
+
+.dark main article h3,
+.dark main .prose h3,
+.dark main .full-content h3 {
+  color: #e5e7eb;
+  border-left-color: #6b7280;
+}
+
+/* H4 styles */
+main article h4,
+main .prose h4,
+main .full-content h4 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.dark main article h4,
+.dark main .prose h4,
+.dark main .full-content h4 {
+  color: #e5e7eb;
+}
+
+/* Special style for the title of the blog post */
+main article h1:first-of-type,
+main .prose h1:first-of-type,
+main .full-content h1:first-of-type {
+  margin-top: 0;
+}
+
+/* Fix for icons and emoji in headings */
+main h1 img,
+main h1 svg,
+main h1 .emoji {
+  display: inline;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/* Make lists more readable */
+main ul, 
+main ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+main li {
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 640px) {
+  main {
+    padding: 1.5em 1em;
+    margin: 1em auto;
+  }
+  
+  .article-card {
+    padding: 1.25em;
+  }
+  
+  h1 { 
+    font-size: 2rem; 
+  }
+  
+  h2 { 
+    font-size: 1.75rem; 
+  }
+  
+  h3 { 
+    font-size: 1.5rem; 
+  }
+  
+  main article h1,
+  main .prose h1,
+  main .full-content h1 {
+    font-size: 2.25rem;
+    padding: 0.6rem 0.75rem 0.6rem 1rem;
+  }
+}
+
+/* Fix animation to avoid layout shifts */
+.article-card {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: transform, opacity;
+}
+
+/* Indicator for code blocks with language */
+.language-plaintext,
+.language-md,
+.language-todo {
+  position: relative;
+}
+
+.highlight pre.language-md::before,
+.highlight pre.language-todo::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+  background: #e5e7eb;
+  color: #4b5563;
+  border-radius: 0 0 0 6px;
+  font-weight: 600;
+}
+
+html.dark .highlight pre.language-md::before,
+html.dark .highlight pre.language-todo::before {
+  background: #374151;
+  color: #d1d5db;
+}
+
+/* Fix for paragraph text visibility */
+html:not(.dark) p {
+  background: none !important;
+  background-color: transparent !important;
+  color: #1f2937 !important;
+  box-shadow: none !important;
+  padding: inherit !important;
+  border-radius: 0 !important;
+}
+
+html:not(.dark) article p,
+html:not(.dark) .prose p, 
+html:not(.dark) .article-card p {
+  background-color: transparent !important;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  color: #1f2937 !important;
+}
+
+html:not(.dark) .prose *:not(pre):not(code):not(blockquote) {
+  background-color: transparent !important;
+}
+
+/* Fix for highlighted content */
+.prose p:first-of-type,
+article p:first-of-type,
+.article-card p:first-of-type {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+/* Fix list items in light mode */
+html:not(.dark) li,
+html:not(.dark) ul li,
+html:not(.dark) ol li {
+  color: #1f2937 !important;
+  background-color: transparent !important;
+}
+
+html:not(.dark) .prose li,
+html:not(.dark) article li {
+  color: #1f2937 !important;
+  margin-bottom: 0.5rem;
+}
+
+/* Fix for bullets and list markers */
+html:not(.dark) ul,
+html:not(.dark) ol {
+  color: #1f2937 !important;
+}
+
+/* Fix for bulleted lists inside highlighted sections */
+html:not(.dark) .prose ul,
+html:not(.dark) .prose ol,
+html:not(.dark) .prose li::marker {
+  color: #1f2937 !important;
+  background: transparent !important;
+}
+
+/* Improved article page layout */
+.article-full {
+  background: #1e293b;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 2rem 2.5rem;
+  margin-top: 2rem;
+}
+
+/* Page title alignment */
+.page-title {
+  text-align: center;
+  margin: 2rem auto 3rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+/* Header improvements */
+header {
+  background: #0f172a;
+  padding: 1.25em 0;
+  border-bottom: 1px solid #1e293b;
+}
+
+header .container {
+  max-width: 1100px;
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Ensure article content has proper light mode styling */
+html:not(.dark) article {
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+}
+
+html:not(.dark) article h1,
+html:not(.dark) article h2,
+html:not(.dark) article h3,
+html:not(.dark) article h4,
+html:not(.dark) article h5,
+html:not(.dark) article h6 {
+  color: #111827 !important;
+}
+
+html:not(.dark) article p,
+html:not(.dark) article li {
+  color: #374151 !important;
+  background-color: transparent !important;
+}
+
+html:not(.dark) article pre {
+  background-color: #f3f4f6 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+html:not(.dark) article code {
+  color: #1e40af !important;
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark) article blockquote {
+  background-color: #f9fafb !important;
+  border-left-color: #3b82f6 !important;
+}
+
+/* Fix for the article prose content */
+html:not(.dark) .prose h1,
+html:not(.dark) .prose h2,
+html:not(.dark) .prose h3,
+html:not(.dark) .prose h4 {
+  color: #111827 !important;
+}
+
+html:not(.dark) .prose pre {
+  background-color: #f3f4f6 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+/* Force article background to be white in light mode */
+html:not(.dark) article.bg-white {
+  background-color: #ffffff !important;
+}
+
+/* Fix image container in light mode */
+html:not(.dark) .image-container {
+  border-color: #e5e7eb !important;
+} 
