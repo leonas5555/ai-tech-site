@@ -39,24 +39,7 @@ Instead of using Copilot reactively, we gave it structure, intention, and respon
 - **Tester** – Writes test cases based on intent and API contracts
 - **Documenter** – Creates changelogs, doc comments, and usage summaries
 
-```plantuml
-@startuml
-left to right direction
-rectangle "Planner\n(plan.md, todo.md)" as Planner
-rectangle "Coder" as Coder
-rectangle "Tester" as Tester
-rectangle "Documenter" as Documenter
-rectangle "Inspector" as Inspector
-rectangle "Copilot" as Copilot
-rectangle "Human Devs\n(Review)" as Human
-Planner --> Copilot
-Coder --> Copilot
-Tester --> Copilot
-Documenter --> Copilot
-Inspector --> Copilot
-Copilot --> Human
-@enduml
-```
+![Diagram](https://leonas5555.github.io/ai-tech-site/assets/diagrams/copilot-assisted-vibe-programming-plantuml-1.png)
 
 ### 🔀 Mode Switching
 
@@ -89,18 +72,7 @@ We use shared, versioned context files that Copilot can infer from:
 - `plan.md`, `todo.md`, `rules.md`, `next_steps.md`
 - A `patterns/` folder with short, canonical code examples
 
-```plantuml
-@startuml
-left to right direction
-rectangle "Intent\n(plan.md, todo.md)" as A
-rectangle "Architecture\n(next_steps.md, context.md)" as B
-rectangle "Style & Idioms\n(patterns/)" as C
-rectangle "Execution\n(source/)" as D
-A --> B
-B --> C
-C --> D
-@enduml
-```
+![Diagram](https://leonas5555.github.io/ai-tech-site/assets/diagrams/copilot-assisted-vibe-programming-plantuml-2.png)
 
 This layered structure keeps Copilot focused on the correct scope — **mitigating context loss across time and tasks**.
 
@@ -151,16 +123,7 @@ Then prompting Copilot with:
 
 —we reinforce our team's idioms. Copilot mimics *our* quality, not just training set defaults.
 
-```plantuml
-@startuml
-left to right direction
-rectangle "patterns/retry-safe.ts" as A
-rectangle "Follow retry-safe pattern" as B
-rectangle "Copilot generates aligned code" as C
-A --> B
-B --> C
-@enduml
-```
+![Diagram](https://leonas5555.github.io/ai-tech-site/assets/diagrams/copilot-assisted-vibe-programming-plantuml-3.png)
 
 ---
 
@@ -196,20 +159,7 @@ This is **vibe-architecting**: define the boundaries, teach the patterns, and le
 
 With simple but intentional context scaffolding, Copilot becomes more than a tool — it becomes a junior teammate that learns as your codebase grows — *without wandering off track*.
 
-```plantuml
-@startuml
-left to right direction
-rectangle "Start: Planning" as A
-rectangle "Freeze Snapshot" as B
-rectangle "Coder Mode" as C
-rectangle "AI Logs Changelog" as D
-rectangle "Team Review" as E
-A --> B
-B --> C
-C --> D
-D --> E
-@enduml
-```
+![Diagram](https://leonas5555.github.io/ai-tech-site/assets/diagrams/copilot-assisted-vibe-programming-plantuml-4.png)
 
 ---
 
