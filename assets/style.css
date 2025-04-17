@@ -94,7 +94,6 @@ pre {
   padding: 1em;
   overflow-x: auto;
   margin: 1.5em 0;
-  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 code {
@@ -108,7 +107,6 @@ html.dark pre,
 html.dark code {
   background: #0f172a; /* Darker background for code in dark mode */
   color: #e5e7eb;
-  border: 1px solid #374151;
 }
 
 html.dark pre {
@@ -118,7 +116,6 @@ html.dark pre {
 /* Code block with syntax highlighting in dark mode */
 html.dark .highlight pre {
   background: #0f172a; /* Darker background */
-  border: 1px solid #374151;
 }
 
 /* Language labels for code blocks */
@@ -684,7 +681,6 @@ html:not(.dark) article li {
 
 html:not(.dark) article pre {
   background-color: #f3f4f6 !important;
-  border: 1px solid #e5e7eb !important;
 }
 
 html:not(.dark) article code {
@@ -707,7 +703,6 @@ html:not(.dark) .prose h4 {
 
 html:not(.dark) .prose pre {
   background-color: #f3f4f6 !important;
-  border: 1px solid #e5e7eb !important;
 }
 
 /* Force article background to be white in light mode */
