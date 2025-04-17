@@ -6,8 +6,7 @@ collections:
     output: true
     permalink: /articles/:slug/
   code_samples:
-    output: true
-    permalink: /code_samples/:path/
+    output: false
 defaults:
   - scope:
       path: "_articles"
@@ -23,6 +22,7 @@ plugins:
 
 # Exclude only directories that shouldn't be processed
 exclude:
+  - code_samples
   - drafts
   - scripts
   - .venv
