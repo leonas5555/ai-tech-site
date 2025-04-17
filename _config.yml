@@ -1,6 +1,6 @@
 title: AI Agents Technical Blog
 baseurl: "/ai-tech-site"
-url: "http://leonas5555.github.io"
+url: "https://leonas5555.github.io"
 collections:
   articles:
     output: true
