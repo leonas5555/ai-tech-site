@@ -20,7 +20,7 @@ title: Home
       
       <div class="content-wrapper">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-100 tracking-tight">
-          <a href="{{ article.url }}" class="hover:text-blue-400 transition">{{ article.title }}</a>
+          <a href="{{ site.baseurl }}{{ article.url }}" class="hover:text-blue-400 transition">{{ article.title }}</a>
         </h2>
         <p class="text-gray-400 text-sm mb-4 flex items-center gap-2">
           {{ article.date | date: "%b %d, %Y" }}
@@ -33,7 +33,7 @@ title: Home
         </p>
         <hr class="my-4 border-gray-700" />
         <p class="mb-4 text-gray-300 text-lg leading-relaxed">{{ article.excerpt | strip_html | truncate: 160 }}</p>
-        <a href="{{ article.url }}" class="read-more bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded px-4 py-2 transition inline-block">Read full article</a>
+        <a href="{{ site.baseurl }}{{ article.url }}" class="read-more bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded px-4 py-2 transition inline-block">Read full article</a>
       </div>
     </div>
   {% endfor %}
