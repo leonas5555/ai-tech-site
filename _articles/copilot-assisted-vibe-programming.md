@@ -7,8 +7,6 @@ excerpt: ""
 layout: post
 ---
 
-# 🚀 Copilot-Assisted Vibe Programming: Building AI-Aware Workflows That Scale (Part 1)
-
 [Part 2 of this series. Minimizing LLM Drift in Copilot Workflows – Advanced Strategies ](https://leonas5555.github.io/ai-tech-site/articles/minimizing-llm-drift-copilot-part2/)
 
 ### ✍️ By Ivan Stankevichus, Senior Software Developer | AI-Augmented Development | 2025

@@ -7,8 +7,6 @@ excerpt: ""
 layout: post
 ---
 
-# 🧬 Minimizing LLM Drift in Copilot Workflows – Advanced Strategies (Part 2)
-
 ### ✍️ By Ivan Stankevichus, Senior Software Developer | AI-Augmented Development | 2025
 
 ---
