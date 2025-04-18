@@ -9,7 +9,7 @@ layout: post
 
 # 🚀 Copilot-Assisted Vibe Programming: Building AI-Aware Workflows That Scale (Part 1)
 
-[Part 2 of this series. Minimizing LLM Drift in Copilot Workflows – Advanced Strategies ](https://leonas5555.github.io/ai-tech-site/minimizing-llm-drift-copilot-part2/)
+[Part 2 of this series. Minimizing LLM Drift in Copilot Workflows – Advanced Strategies ](https://leonas5555.github.io/ai-tech-site/articles/minimizing-llm-drift-copilot-part2/)
 
 ### ✍️ By Ivan Stankevichus, Senior Software Developer | AI-Augmented Development | 2025
 
@@ -213,4 +213,4 @@ Include `rules.md`, `plan.md`, and `design.md` during Copilot tasks to ground th
 [Get the Copilot Context Starter Kit on GitHub](https://github.com/leonas5555/ai-tech-site/tree/e18629c1e5a32b9caf8c24563e8897926d92917a/code_samples/copilot_context_starter_updated) 
 
 ### Further reading:
-[Part 2 of this series. Minimizing LLM Drift in Copilot Workflows – Advanced Strategies ](https://leonas5555.github.io/ai-tech-site/minimizing-llm-drift-copilot-part2/)
+[Part 2 of this series. Minimizing LLM Drift in Copilot Workflows – Advanced Strategies ](https://leonas5555.github.io/ai-tech-site/articles/minimizing-llm-drift-copilot-part2/)
