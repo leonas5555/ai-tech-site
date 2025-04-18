@@ -713,4 +713,54 @@ html:not(.dark) article.bg-white {
 /* Fix image container in light mode */
 html:not(.dark) .image-container {
   border-color: #e5e7eb !important;
-} 
+}
+
+/* --- Table and Link Fixes for Article Formatting --- */
+article table, .prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  display: block;
+}
+article th, article td, .prose th, .prose td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75em 1em;
+  text-align: left;
+  vertical-align: top;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  background: inherit;
+}
+article th, .prose th {
+  background: #f3f4f6;
+  font-weight: 700;
+}
+.dark article th, .dark .prose th {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+article table, .prose table {
+  background: #fff;
+}
+.dark article table, .dark .prose table {
+  background: #18181b;
+}
+@media (max-width: 700px) {
+  article table, .prose table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+}
+article a, .prose a {
+  color: #2563eb;
+  text-decoration: underline;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  transition: color 0.2s;
+}
+article a:hover, .prose a:hover {
+  color: #1d4ed8;
+}
+/* --- End Table and Link Fixes --- */ 
