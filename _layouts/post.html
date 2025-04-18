@@ -1,38 +1,278 @@
 ---
 layout: default
 ---
-<article class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 w-full max-w-screen-xl mx-auto mt-8 mb-8">
-  <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">{{ page.title }}</h2>
-  <p class="text-gray-700 dark:text-gray-400 text-sm mb-6">Published: {{ page.date | date: '%B %d, %Y' }}</p>
-  <div class="flex items-center gap-4 mb-6">
-    <img src="{{ site.baseurl }}/assets/images/profile.jpg" alt="Ivan Stankevichus avatar" class="w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700">
-    <div>
-      <div class="font-semibold text-gray-900 dark:text-gray-100">Ivan Stankevichus</div>
-      <div class="text-gray-700 dark:text-gray-400 text-sm">Senior Software Developer & AI-Augmented Development Enthusiast</div>
+
+<article class="mx-auto w-full max-w-5xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert font-inter">
+    <header class="mb-4 lg:mb-6 not-format">
+        <div class="flex flex-col sm:flex-row items-center mb-6 gap-4">
+            <img class="w-14 h-14 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="https://leonas5555.github.io/ai-tech-site/assets/images/profile.jpg" alt="Profile avatar">
+            <div class="flex flex-col items-center sm:items-start">
+                <span class="font-bold text-lg text-gray-900 dark:text-white">Ivan Stankevichus</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">Senior Software Developer & AI-Augmented Development Enthusiast</span>
+            </div>
+        </div>
+        <address class="flex items-center mb-6 not-italic">
+            <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                <div>
+                    <p class="text-base font-light text-gray-500 dark:text-gray-400">{{ page.date | date: "%b %d, %Y" }}</p>
+                </div>
+            </div>
+        </address>
+        <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">{{ page.title }}</h1>
+        {% if page.tags.size > 0 %}
+        <div class="flex flex-wrap gap-2 mb-4">
+            {% for tag in page.tags %}
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">#{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </header>
+    
+    <div class="prose max-w-none prose-blue prose-img:rounded-xl prose-headings:font-bold prose-a:text-blue-600 prose-pre:bg-gray-800 prose-pre:text-gray-100 dark:prose-invert dark:prose-a:text-blue-500 article-content prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-relaxed">
+        {{ content }}
     </div>
-  </div>
+    
+    <div class="mt-10 pt-10 border-t border-gray-200 dark:border-gray-700">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Share this article</h2>
+        <div class="flex items-center space-x-4">
+            <a href="https://twitter.com/intent/tweet?url={{ site.url | append: site.baseurl | append: page.url | url_encode }}&text={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url | append: site.baseurl | append: page.url | url_encode }}&title={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="mailto:?subject={{ page.title | url_encode }}&body={{ site.url | append: site.baseurl | append: page.url | url_encode }}" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </a>
+        </div>
+    </div>
+</article>
+
+<style>
+  /* Additional article-specific styles */
+  .article-content h1 {
+    font-size: 2.9rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 1rem;
+  }
+
+  .article-content h2 {
+    font-size: 2.15rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1e3a8a;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1e40af;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .article-content h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #111827;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .article-content p, .article-content li {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem; 
+    line-height: 1.85;
+    color: #374151;
+    font-size: 1.125rem;
+  }
   
-  <div class="prose prose-lg max-w-none text-gray-800 dark:text-gray-200 
-    prose-headings:text-gray-900 prose-headings:dark:text-gray-100 
-    prose-headings:font-bold 
-    prose-h1:text-5xl prose-h1:mt-10 prose-h1:mb-8 
-    prose-h1:pl-4 prose-h1:py-4
-    prose-h1:border-l-8 prose-h1:border-blue-600 dark:prose-h1:border-blue-500
-    prose-h1:bg-gray-50 dark:prose-h1:bg-gray-800/50
-    prose-h1:rounded-r
-    prose-h2:text-3xl prose-h2:mt-10 prose-h2:mb-5 
-    prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-    prose-h4:text-xl prose-h4:mt-6 prose-h4:mb-3
-    prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-700
-    prose-a:text-blue-700 prose-a:dark:text-blue-400 
-    prose-code:text-gray-800 prose-code:dark:text-blue-300 prose-code:dark:bg-gray-900/95
-    prose-pre:bg-gray-100 prose-pre:dark:bg-gray-900 prose-pre:border prose-pre:border-gray-200 prose-pre:dark:border-gray-700
-    prose-p:text-gray-800 prose-p:dark:text-gray-200 prose-p:leading-relaxed prose-p:my-5
-    prose-li:text-gray-800 prose-li:dark:text-gray-200 prose-li:my-2 
-    prose-ul:text-gray-800 prose-ul:dark:text-gray-200 prose-ul:my-4 
-    prose-ol:text-gray-800 prose-ol:dark:text-gray-200 prose-ol:my-4
-    prose-ul:marker:text-gray-700 prose-ul:marker:dark:text-gray-300
-    prose-ol:marker:text-gray-700 prose-ol:marker:dark:text-gray-300">
-    {{ content }}
-  </div>
-</article> 
+  .article-content pre {
+    margin: 1.5em 0;
+    padding: 1.25rem !important;
+    background-color: #1e293b !important;
+    color: #e2e8f0 !important;
+    border-radius: 0.5rem !important;
+    overflow-x: auto !important;
+    border: 1px solid rgba(226, 232, 240, 0.1) !important;
+  }
+  
+  .article-content pre code {
+    background-color: transparent !important;
+    color: #e2e8f0 !important;
+    padding: 0 !important;
+    font-weight: normal !important;
+    font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+  
+  .article-content code:not(pre code) {
+    background-color: #e2e8f0;
+    color: #1e293b;
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.875em;
+  }
+  
+  .article-content a {
+    color: #2563eb;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  
+  .article-content a:hover {
+    color: #1d4ed8;
+  }
+  
+  .article-content ul, .article-content ol {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+    color: #374151;
+  }
+  
+  .article-content ul {
+    list-style-type: disc;
+  }
+  
+  .article-content ol {
+    list-style-type: decimal;
+  }
+  
+  .article-content li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.75;
+  }
+  
+  .article-content blockquote {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #4b5563;
+    border-left: 4px solid #3b82f6;
+    margin-left: 0;
+    padding-left: 1rem;
+    font-style: italic;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  
+  .article-content table {
+    width: 100%;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  .article-content th {
+    background-color: #f9fafb;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #111827;
+  }
+  
+  .article-content td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+  }
+  
+  /* Dark mode modifications */
+  .dark .article-content h1,
+  .dark .article-content h4 {
+    color: #fff;
+  }
+  
+  .dark .article-content h2 {
+    color: #93c5fd;
+    border-bottom: 1px solid #374151;
+  }
+  
+  .dark .article-content h3 {
+    color: #60a5fa;
+  }
+  
+  .dark .article-content p, 
+  .dark .article-content li {
+    color: #e5e7eb;
+    font-size: 1.125rem;
+    line-height: 1.85;
+  }
+  
+  .dark .article-content code:not(pre code) {
+    background-color: #334155;
+    color: #e2e8f0;
+  }
+  
+  .dark .article-content blockquote {
+    color: #9ca3af;
+    border-left-color: #60a5fa;
+  }
+  
+  .dark .article-content th {
+    background-color: #374151;
+    color: #e2e8f0;
+    border-bottom: 1px solid #4b5563;
+  }
+  
+  .dark .article-content td {
+    border-bottom: 1px solid #4b5563;
+    color: #e5e7eb;
+  }
+  
+  .dark .article-content a {
+    color: #60a5fa;
+  }
+  
+  .dark .article-content a:hover {
+    color: #93c5fd;
+  }
+  
+  /* Responsive content */
+  @media (max-width: 640px) {
+    .article-content pre {
+      margin: 1em 0;
+      padding: 0.75rem !important;
+      font-size: 0.875em;
+    }
+    
+    .article-content h1 {
+      font-size: 2.3rem;
+    }
+    
+    .article-content h2 {
+      font-size: 1.7rem;
+    }
+    
+    .article-content h3 {
+      font-size: 1.35rem;
+    }
+    
+    .article-content h4 {
+      font-size: 1.2rem;
+    }
+    .article-content p, .article-content li {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }
+  
+  /* Add smooth scrolling for anchor links in articles */
+  html {
+    scroll-behavior: smooth;
+  }
+</style> 
