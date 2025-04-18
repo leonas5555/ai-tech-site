@@ -164,9 +164,13 @@ With simple but intentional context scaffolding, Copilot becomes more than a too
 ---
 
 👉 **Want to try this?**
-Start with:
-- A `copilot-context/` folder
-- Shared markdowns like `plan.md`, `rules.md`, and `ai_changelog.md`
-- A few well-named files in `patterns/`
 
-Set the vibe — and let Copilot deliver. 🚀 
+[Get the Copilot Context Starter Kit on GitHub](https://github.com/leonas5555/ai-tech-site/tree/e18629c1e5a32b9caf8c24563e8897926d92917a/code_samples/copilot_context_starter_updated)
+
+![Diagram](https://leonas5555.github.io/ai-tech-site/assets/diagrams/copilot-assisted-vibe-programming-plantuml-5.png)
+
+---
+
+👉 **Want to try this?**
+
+[Get the Copilot Context Starter Kit on GitHub](https://github.com/leonas5555/ai-tech-site/tree/e18629c1e5a32b9caf8c24563e8897926d92917a/code_samples/copilot_context_starter_updated) 
