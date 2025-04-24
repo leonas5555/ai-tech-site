@@ -1,9 +1,13 @@
 ---
-title: "🚀 Copilot-Assisted Vibe Programming: Building AI-Aware Workflows That Scale"
+base_slug: "2025-04-16-v1-copilot-assisted-vibe-programming"
+platform: "GHP"
+title: "Copilot-Assisted Vibe Programming: Building AI-Aware Workflows That Scale"
+status: "ready"
+cover_image: "/assets/covers/copilot-assisted-vibe-programming.png"
 date: 2025-04-16
-tags: []
-slug: copilot-assisted-vibe-programming
-excerpt: ""
+tags: ["AI", "Developer Experience", "Copilot", "Productivity"]
+summary: "How to build scalable, AI-aware developer workflows with Copilot."
+code_samples: ["copilot_context_starter_updated"]
 layout: post
 ---
 

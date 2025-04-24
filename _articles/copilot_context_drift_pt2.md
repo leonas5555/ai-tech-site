@@ -1,9 +1,13 @@
 ---
-title: "🧬  Minimizing LLM Drift in Copilot Workflows – Advanced Strategies"
+base_slug: "2025-04-18-v1-minimizing-llm-drift-copilot-part2"
+platform: "GHP"
+title: "Minimizing LLM Drift in Copilot Workflows – Advanced Strategies"
+status: "ready"
+cover_image: "/assets/covers/minimizing-llm-drift-copilot-part2.png"
 date: 2025-04-18
-tags: []
-slug: minimizing-llm-drift-copilot-part2
-excerpt: ""
+tags: ["AI", "Developer Experience", "Copilot", "LLM", "Context Drift"]
+summary: "Advanced strategies for minimizing LLM context drift in Copilot workflows, including multi-model orchestration and context bundling."
+code_samples: []
 layout: post
 ---
 
