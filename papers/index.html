@@ -8,23 +8,23 @@ title: Research Papers
   
   <div class="grid md:grid-cols-2 gap-6">
     {% for paper in site.papers %}
-    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
       <h2 class="text-xl font-bold mb-2">
-        <a href="{{ paper.url | relative_url }}" class="text-blue-600 hover:text-blue-800">{{ paper.title }}</a>
+        <a href="{{ paper.url | relative_url }}" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">{{ paper.title }}</a>
       </h2>
       
       {% if paper.date %}
-      <div class="text-gray-600 text-sm mb-2">{{ paper.date | date: "%B %d, %Y" }}</div>
+      <div class="text-gray-600 dark:text-gray-400 text-sm mb-2">{{ paper.date | date: "%B %d, %Y" }}</div>
       {% endif %}
       
       {% if paper.summary %}
-      <p class="text-gray-700 mb-4">{{ paper.summary }}</p>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">{{ paper.summary }}</p>
       {% endif %}
       
       {% if paper.tags %}
       <div class="flex flex-wrap gap-2">
         {% for tag in paper.tags %}
-        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">{{ tag }}</span>
+        <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded text-xs">{{ tag }}</span>
         {% endfor %}
       </div>
       {% endif %}
