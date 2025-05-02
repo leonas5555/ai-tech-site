@@ -5,6 +5,9 @@ collections:
   articles:
     output: true
     permalink: /articles/:slug/
+  papers:
+    output: true
+    permalink: /papers/:title/
   code_samples:
     output: false
 defaults:
@@ -12,6 +15,10 @@ defaults:
       path: "_articles"
     values:
       layout: "post"
+  - scope:
+      path: "_papers"
+    values:
+      layout: "paper"
   - scope:
       path: "code_samples"
     values:
