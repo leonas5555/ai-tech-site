@@ -2,7 +2,7 @@
 layout: paper
 title: "Designing Self-Improving AI Software Agents: A Practical Blueprint for Autonomous Code Quality and Reuse"
 author: "Ivan Stankevichus"
-date: 2024-06-10
+date: 2025-05-02
 tags: ["AI", "Software Engineering", "Code Quality", "Autonomous Agents", "RAG"]
 summary: "A unified architecture for self-improving code pipelines using RAG, vector similarity checks, multi-agent collaboration, and reinforcement learning."
 ---

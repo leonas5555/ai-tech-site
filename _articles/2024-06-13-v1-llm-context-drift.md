@@ -1,6 +1,7 @@
 ---
 base_slug: "2024-06-13-v1-llm-context-drift"
 title: "Keeping AI Pair Programmers On Track: Minimizing Context Drift in LLM-Assisted Workflows"
+date: 2025-04-20
 status: "ready"
 audience_label: ["D", "CR"]
 tags: ["AI", "DevRel", "LLM", "ContextDrift", "Copilot"]
