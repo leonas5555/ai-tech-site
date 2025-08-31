@@ -31,7 +31,7 @@ p, li, span, div {
 
 header, footer {
   background: #fff;
-  padding: 1.5em 0;
+  padding: 0;
   box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 
@@ -57,7 +57,7 @@ h1 { font-size: 2.5em; }
 h2 { font-size: 2em; }
 h3 { font-size: 1.5em; }
 
-nav {
+main nav {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
