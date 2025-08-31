@@ -8,7 +8,7 @@ title: Home
         {% for article in site.articles %}
             {% if forloop.first %}
                 <div class="col-span-2">
-                    <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700">
                         {% if article.featured_image %}
                         <div class="w-full h-64 overflow-hidden rounded-lg mb-4">
                             <img src="{{ article.featured_image }}" alt="{{ article.title }}" class="w-full h-full object-cover">
@@ -34,7 +34,7 @@ title: Home
                     </div>
                 </div>
             {% else %}
-                <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700">
                     {% if article.featured_image %}
                     <div class="w-full h-48 overflow-hidden rounded-lg mb-4">
                         <img src="{{ article.featured_image }}" alt="{{ article.title }}" class="w-full h-full object-cover">
@@ -65,40 +65,14 @@ title: Home
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Add smooth reveal animation for article cards
-    const cards = document.querySelectorAll('.article-card');
-    
-    cards.forEach((card, index) => {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      
-      setTimeout(() => {
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, index * 100);
-    });
+    // Remove reveal animation that changes transform to avoid layout shift on interaction
   });
 </script>
 
 <style>
-  /* Animation styles for card hover */
-  .bg-white {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .bg-white:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-  
-  .dark .bg-gray-800:hover {
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Improve code block display */
-  code.language-md, code.language-todo {
-    line-height: 1.5;
-    font-size: 0.9em;
-  }
+  /* Disable hover movement on cards to prevent layout shift */
+  .bg-white { transition: box-shadow 0.2s ease, color 0.2s ease; }
+  .bg-white:hover { transform: none; box-shadow: 0 6px 16px -6px rgba(0,0,0,0.1), 0 4px 10px -6px rgba(0,0,0,0.06); }
+  .dark .bg-gray-800:hover { box-shadow: 0 6px 16px -6px rgba(0,0,0,0.25), 0 4px 10px -6px rgba(0,0,0,0.18); }
+  code.language-md, code.language-todo { line-height: 1.5; font-size: 0.9em; }
 </style> 
